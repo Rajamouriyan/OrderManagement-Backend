@@ -3,14 +3,14 @@
     "name": "login",
     "builds": [
         {
-            "src": "app.js",
+            "src": "./app.js",
             "use": "@vercel/node"
         }
     ],
-    "routes": [
+    "routes": [{"handle": "filesystem"},
         {
-            "src": "/(.*)",
-            "dest": "/app.js"
+            "src": "/.*",
+            "dest": "app.js"
         }
     ]
   }

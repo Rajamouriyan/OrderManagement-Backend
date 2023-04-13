@@ -2,7 +2,6 @@
 
 const express = require('express');
 const connectDB = require('./config/db');
-const bodyParser = require('body-parser');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth = require('./auth');

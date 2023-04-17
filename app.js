@@ -41,7 +41,7 @@ app.get('/', (req, res) => res.send('Backend Application for Order Management'))
 // use Routes
 app.use('/api/orders', orders);
 
-const port = process.env.PORT;
+
 
 // register endpoint
 app.post('/register', (request, response) => {
@@ -144,7 +144,7 @@ app.get('/auth', auth , (request, response) => {
     response.json({ message: "" });
   });
   
-
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 

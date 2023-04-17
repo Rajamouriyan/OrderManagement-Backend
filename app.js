@@ -6,6 +6,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth = require('./auth');
 
+// routes
+const orders = require('./routes/api/orders');
+
 const app = express();
 
 // Connect Database
@@ -33,9 +36,10 @@ const User = require('./models/userModel');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req, res) => res.send('Hey I got it dude!'));
+app.get('/', (req, res) => res.send('Backend Application for Order Management'));
 
-
+// use Routes
+app.use('/api/orders', orders);
 
 const port = process.env.PORT || 8000;
 
@@ -136,8 +140,8 @@ app.post('/login', (request, response) => {
 
 
 // authentication endpoint
-app.get('/auth-endpoint', auth , (request, response) => {
-    response.json({ message: "You are authorized to access me" });
+app.get('/auth', auth , (request, response) => {
+    response.json({ message: "" });
   });
   
 

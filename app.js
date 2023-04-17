@@ -41,7 +41,7 @@ app.get('/', (req, res) => res.send('Backend Application for Order Management'))
 // use Routes
 app.use('/api/orders', orders);
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 
 // register endpoint
 app.post('/register', (request, response) => {
